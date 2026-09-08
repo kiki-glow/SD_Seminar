@@ -1,0 +1,32 @@
+{
+  "id": "baa69f43-39b8-4f4b-a115-32eaee04a94f",
+  "name": "SD_Seminar",
+  "publisher": "D.E. Veloper",
+  "version": "1.0.0.0",
+  "brief": "Seminar management",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "27.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "16.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
