@@ -12,16 +12,16 @@ tableextension 50100 "CSD ResourceExt" extends Resource
             end;
         }
 
-        modify(Type)
-        {
-            OptionCaption='Instructor,Room';
-        }
+        // modify(Type)
+        // {
+        //     OptionCaption='Instructor,Room';
+        // } // deprecated
 
-        field(50101; "CSD Resource Type"; Option)
+        field(50101; "CSD Resource Type"; Enum "CSD Resource Type")
         {
             Caption = 'Resource Type';
-            OptionMembers = "Internal","External";
-            OptionCaption = 'Internal,External';
+            // OptionMembers = "Internal","External";
+            // OptionCaption = 'Internal,External'; // create an enum instead of an option
         }
 
         field(50102; "CSD Maximum Participants"; Integer)
@@ -32,6 +32,11 @@ tableextension 50100 "CSD ResourceExt" extends Resource
         field(50103; "CSD Quantity Per Day"; Decimal)
         {
             Caption = 'Quantity Per Day';
+        }
+
+        field(50104; "CSD Seminar Resource Kind"; Enum "CSD Seminar Resource Kind")
+        {
+            Caption = 'Seminar Resource Kind';
         }
     }
 }
