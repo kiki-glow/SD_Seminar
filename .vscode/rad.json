@@ -1,1 +1,1 @@
-﻿{"Added":[],"Modified":[],"Removed":[]}
+﻿{"Added":[{"Id":50101,"Kind":22,"Name":"CSD Seminar Resource Kind","Namespace":""},{"Id":50100,"Kind":22,"Name":"CSD Resource Type","Namespace":""},{"Id":50102,"Kind":12,"Name":"CSD Seminar List","Namespace":""},{"Id":50101,"Kind":12,"Name":"CSD Seminar Card","Namespace":""},{"Id":50100,"Kind":12,"Name":"CSD Seminar Setup","Namespace":""}],"Modified":[{"Id":50100,"Kind":17,"Name":"CSD ResourceExt","Namespace":""},{"Id":50101,"Kind":10,"Name":"CSD Seminar","Namespace":""}],"Removed":[]}
