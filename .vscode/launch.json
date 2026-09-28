@@ -10,6 +10,7 @@
             "serverInstance": "BC270",
             "authentication": "Windows",
             "startupObjectType": "Page",
+            "startupObjectId": 50102,
             "breakOnError": "All",
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
