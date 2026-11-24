@@ -298,7 +298,7 @@ page 50109 "CSD Seminar Registration"
                             Error('The record cannot be posted because it is not approved.');
 
                         // Call the posting codeunit or procedure
-                        CODEUNIT.Run(CODEUNIT::"CSD Seminar PostYesNo", Rec);
+                        CODEUNIT.Run(CODEUNIT::"CSD Seminar PostYesNo", Rec); // hey BC, go find the codeunit named 'CSD Seminar PostYesNo' and run its main logic using the data from the current record I am looking at right now.
                     end;
                 }
                 action("&Print")

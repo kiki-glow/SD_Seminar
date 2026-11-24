@@ -383,8 +383,8 @@ table 50105 "CSD Seminar Reg. Header"
         //If this condition is true, the system validates that the Status of the record must be set to Cancelled.
         //If the status is not Cancelled, the deletion process is stopped, and an error is thrown. This ensures that only records that have been explicitly cancelled can be deleted, which is useful for preventing accidental deletion of active or planned seminar registrations    
         SeminarRegLine.RESET;
-        SeminarRegLine.SETRANGE("Document No.", "No.");
-        SeminarRegLine.SETRANGE(Registered, TRUE);
+        SeminarRegLine.SetRange("Document No.", "No.");
+        SeminarRegLine.SetRange(Registered, TRUE);
         IF SeminarRegLine.FIND('-') THEN
             ERROR(
               ErrCannotDeleteLine,
@@ -393,11 +393,11 @@ table 50105 "CSD Seminar Reg. Header"
               TRUE);
         //The system resets the SeminarRegLine table and sets a range filter on the "Document No." field to match the "No." of the current seminar registration record. It also filters to only include lines where the Registered field is set to TRUE.
         //If any related seminar registration lines are found with Registered = TRUE, the system raises an error using the predefined error message (ErrCannotDeleteLine). This prevents deletion of seminar registration headers if there are any associated registered seminar lines.
-        SeminarRegLine.SETRANGE(Registered);//If there are no registered seminar lines, the system resets the range on the Registered field, removing any filters, and proceeds to delete all seminar registration lines associated with the current document (i.e., seminar registration header).
+        SeminarRegLine.SetRange(Registered);//If there are no registered seminar lines, the system resets the range on the Registered field, removing any filters, and proceeds to delete all seminar registration lines associated with the current document (i.e., seminar registration header).
         SeminarRegLine.DELETEALL(TRUE);//deletes all records that match the specified filters (in this case, all lines related to the current registration).
 
         SeminarCharge.RESET;
-        SeminarCharge.SETRANGE("Document No.", "No.");//The system checks the SeminarCharge table for any related records by filtering on the "Document No." field to match the current seminar registration number.
+        SeminarCharge.SetRange("Document No.", "No.");//The system checks the SeminarCharge table for any related records by filtering on the "Document No." field to match the current seminar registration number.
         IF NOT SeminarCharge.ISEMPTY THEN
             ERROR(ErrCannotDeleteCharge, SeminarCharge.TABLECAPTION);
         //If any seminar charges exist, the system raises an error using the predefined error message (ErrCannotDeleteCharge). This prevents the deletion of the seminar registration header if there are related seminar charges, as these charges must be addressed before the registration can be deleted.
